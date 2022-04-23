@@ -2,13 +2,9 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 import { Workspaces } from "../dbConnection";
 
-type Data = {
-  name: string;
-};
-
 export default async function handler(
   req: NextApiRequest,
-  res: NextApiResponse<Data>
+  res: NextApiResponse
 ) {
   const wrkspaces = await Workspaces.findAll();
 
