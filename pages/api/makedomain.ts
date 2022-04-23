@@ -13,16 +13,14 @@ export default async function handler(
       data: "GET METHID NOT CODED YET",
     });
   } else {
-    const userCreated = await prisma.user.create({
+    const domainCreated = await prisma.domains.create({
       data: {
-        firstName: "Ashish",
-        lastName: "Tiwari",
-        password: "123",
-        email: "ash@ash.com",
+        user_id: "5c0932e5-4d81-4959-9930-8ccc99475f16",
+        domain_name: "New Domain",
       },
     });
-    console.log(userCreated);
+    console.log(domainCreated);
 
-    res.status(200).send(userCreated);
+    res.status(200).send(domainCreated);
   }
 }
